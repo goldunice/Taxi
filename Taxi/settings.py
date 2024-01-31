@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'drf_yasg',
+    'rest_framework_simplejwt',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +73,12 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Taxi.wsgi.application'
+ASGI_APPLICATION = 'Taxi.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        "BACKEND": 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

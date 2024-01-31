@@ -40,6 +40,7 @@ class Driver(CustomUser):
 
     class Meta:
         verbose_name_plural = 'Driver'
+        ordering = ['-id']
 
     def __str__(self):
         return self.fullname
